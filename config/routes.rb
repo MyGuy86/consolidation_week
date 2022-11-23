@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
  
+  get 'home/index'
   resources :pollies
 
   resources :vsers
@@ -17,6 +18,9 @@ Rails.application.routes.draw do
 
 # post '/quote', to: 'quotes#create'
 post '/lead', to: 'leads#create'
+post '/intervention', to: 'intervention#create'
+
+
 
   
   root 'pages#index'
@@ -27,7 +31,7 @@ post '/lead', to: 'leads#create'
 
   get '/commercial', to: 'pages#commercial'
 
-  
+
   get '/residential', to: 'pages#residential'
   resources :leads
   resources :quotes
@@ -39,6 +43,13 @@ post '/lead', to: 'leads#create'
 get '/map', to: 'admin#map'
 
 resources :maps
+
+
+get '/intervention', to: 'pages#intervention'
+get 'get_building_by_customer/:customer_id', to: 'intervention#get_building_by_customer'
+get 'get_battery_by_building/:building_id', to: 'intervention#get_battery_by_building'
+get 'get_column_by_battery/:battery_id', to: 'intervention#get_column_by_battery'
+get 'get_elevator_by_column/:column_id', to: 'intervention#get_elevator_by_column'
 
 end
 

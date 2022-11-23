@@ -49,7 +49,7 @@ include SendGrid
         subject = "Greetings #{@lead.Full_name_of_the_contact}
         We thank you for contacting Rocket Elevators to discuss the opportunity to contribute to your project [Project Name].
         A representative from our team will be in touch with you very soon. We look forward to demonstrating the value of our solutions and helping you choose the appropriate product given your requirements.
-        We’ll Talk soon
+        We will Talk soon
         The Rocket Team"
         content = SendGrid::Content.new(type: 'text/plain', value: 'and easy to do anywhere, even with Ruby')
         mail = SendGrid::Mail.new(from, subject, to, content)

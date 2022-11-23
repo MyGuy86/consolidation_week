@@ -1,0 +1,48 @@
+<form action="/intervention" method="post" accept-charset="UTF-12" >
+<div class="row no-gutters wow slideInUp "  data-wow-duration="1s">
+<div>  
+ <br><br><br><br><br><br><br>
+  <div class="col-md-12 home-form-check-inline">
+ 
+
+
+    <%= select_tag "customer", options_from_collection_for_select(Customer.all, "id", "CompanyName"), prompt: "Customer" %>
+    <%= select_tag "building", options_from_collection_for_select(Building.all, "id", "address_id"), prompt: "Building" %>
+    <%= select_tag "battery", options_from_collection_for_select(Battery.all, "id", "id"), prompt: "Battery" %>
+    <%= select_tag "column", options_from_collection_for_select(Column.all, "id", "id"), prompt: "Column" %>
+    <%= select_tag "elevator", options_from_collection_for_select(Elevator.all, "id", "id"), prompt: "Elevator" %>
+    <%= select_tag "employee", options_from_collection_for_select(Employee.all, "id", "title"), prompt: "Employees" %>
+
+    <div class="col-md-12">
+      <label for="font-weight:bold">Project Description</label>
+      <textarea maxlength="10000" rows="3" class="form-control" name="projectdescription" id="project description"></textarea>
+  <br>
+  <br>
+  <br>
+  <br>
+    </div>
+  <br>
+  <br>
+  <br>
+  <br>						
+    <%= submit_tag("Submit", class: "btn btn-primary") %>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  </div>
+  </div>
+</div>
+
+</form>
