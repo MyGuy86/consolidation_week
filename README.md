@@ -3,7 +3,7 @@
 
 THe Repo for the RestAPIs done this week is: 
 
-git@github.com:MyGuy86/RestAPIConsolidation.git
+https://github.com/MyGuy86/NewRepo.git
 
 
 
