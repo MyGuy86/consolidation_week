@@ -69,13 +69,13 @@ document.addEventListener('DOMContentLoaded', function (e) {
     // this will remove everything
    if (column.value === '') {
       removeColumnOptions()
-      defaultColumn(0, 'Column')
+      defaultColumn('', 'Column')
    }
     // when first loaded, all elevators will be displayed in the elevator dropdown
     // this will remove everything
    if (elevator.value === '') {
       removeElevatorOptions()
-      defaultElevator(0, 'Elevator')
+      defaultElevator('', 'Elevator')
    }
 
     // change event on the customer dropdown
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
                 defaultBuilding(0, 'Building')
                 // loop through all our data and display only buildings we need
                 data.forEach((obj) => {
-                   defaultBuilding(obj.id, "stupid bitch " + obj.id)
+                   defaultBuilding(obj.id, obj.id)
                 })
              })
              .catch((error) => console.log(error))
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
                defaultBattery(0, 'Battery')
                // loop through all our data and display only battery we need
                data.forEach((obj) => {
-                  defaultBattery(obj.id, "bitchass " + obj.id)
+                  defaultBattery(obj.id, obj.id)
                })
             })
             .catch((error) => console.log(error))
@@ -143,17 +143,17 @@ document.addEventListener('DOMContentLoaded', function (e) {
          id_value_string === 0
       ) {
          removeColumnOptions()
-         defaultColumn(0, 'Column')
+         defaultColumn('', 'Column')
       } else {
          // fetch will call the controller which holds our data
          fetch(`get_column_by_battery/${e.target.value}`)
             .then((response) => response.json())
             .then((data) => {
                removeColumnOptions()
-               defaultColumn(0, 'Column')
+               defaultColumn('', 'Column')
                // loop through all our data and display only columns we need
                data.forEach((obj) => {
-                  defaultColumn(obj.id, "fuck face " + obj.id)
+                  defaultColumn(obj.id, obj.id)
                })
             })
             .catch((error) => console.log(error))
@@ -171,17 +171,17 @@ document.addEventListener('DOMContentLoaded', function (e) {
          id_value_string === 0
       ) {
          removeElevatorOptions()
-         defaultElevator(0, 'Elevator')
+         defaultElevator('', 'Elevator')
       } else {
          // fetch will call the controller which holds our data
          fetch(`/get_elevator_by_column/${e.target.value}`)
             .then((response) => response.json())
             .then((data) => {
                removeElevatorOptions()
-               defaultElevator(0, 'Elevator')
+               defaultElevator('', 'Elevator')
                // loop through all our data and display only elevators we need
                data.forEach((obj) => {
-                  defaultElevator(obj.id, "stupid bitch " + obj.id)
+                  defaultElevator(obj.id, obj.id)
                })
             })
             .catch((error) => console.log(error))

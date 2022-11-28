@@ -40,7 +40,7 @@ class InterventionController < ApplicationController
             end
           end
           Employee.all.each do|t|
-            if t.id == intervention.author_id
+            if t.id == intervention.employee_id
               employeeName = t.first_name + " " + t.last_name
             end
           end
@@ -65,9 +65,14 @@ class InterventionController < ApplicationController
           priority: 1,
           type: "Problem",
           email: "#{user}",
-          description: "THE FOLLOWING IS IN INTERVENTION BY #{userTitle} : Company- #{company}  Building- #{intervention.building_id}
-          Battery- #{intervention.battery_id} Column- #{intervention.column_id} Elevator- #{intervention.elevator_id}. The 
-          Issue is: #{intervention.report}. #{employeeName} will be assigned to fix the issue",
+          description: "THE FOLLOWING IS IN INTERVENTION BY #{userTitle} : 
+          <p>Company- #{company}  
+          <p>Building- #{intervention.building_id}
+          <p>Battery- #{intervention.battery_id} 
+          <p>Column- #{intervention.column_id == nil ? "none" : intervention.column_id} 
+          <p>Elevator- #{intervention.elevator_id == nil ? "none" : intervention.elevator_id}
+          <p>The Issue is: #{intervention.report}. 
+          <p>#{employeeName} will be assigned to fix the issue",
           subject: "INTERVENTION",
           }.to_json
                               
